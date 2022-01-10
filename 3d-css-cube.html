@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>3d Flash Cube</title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: black;
+        }
+
+        .boxContainer {
+            width: 400px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            perspective: 1000px;
+            perspective-origin: top left;
+        }
+
+        .box {
+            text-align: center;
+            position: relative;
+            padding: 5em;
+            animation: spin 10s infinite ease-out;
+            transform-style: preserve-3d;
+            height: 400px;
+            transform-origin: center center -200px;
+        }
+
+        .front,
+        .back,
+        .left,
+        .right,
+        .top,
+        .bottom {
+            padding: 2em;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            background-color: red;
+        }
+
+        .back {
+            background-color: orange;
+            transform: translateZ(-400px) rotateY(.5turn);
+        }
+
+        .left {
+            background-color: yellow;
+            transform: rotateY(.75turn) translateX(-200px) translateZ(200px);
+        }
+
+        .right {
+            background-color: green;
+            transform: rotateY(.25turn) translateX(200px) translateZ(200px);
+        }
+
+        .top {
+            background-color: blue;
+            transform: rotateX(.25turn) translateZ(-200px) translateY(-200px);
+        }
+
+        .bottom {
+            background-color: indigo;
+            transform: rotateX(.75turn) translateZ(200px) translateY(200px);
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(1080deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxContainer">
+        <div class="box">
+            <div class="front">
+                <p>front</p>
+            </div>
+            <div class="back">
+                <p>back</p>
+            </div>
+            <div class="left">
+                <p>left</p>
+            </div>
+            <div class="right">
+                <p>right</p>
+            </div>
+            <div class="top">
+                <p>top</p>
+            </div>
+            <div class="bottom">
+                <p>bottom</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
