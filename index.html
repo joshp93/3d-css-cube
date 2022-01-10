@@ -54,27 +54,45 @@
         }
 
         .front {
-            background-color: red;
+            background: url("https://assets.dicebreaker.com/flash-gordon-movie-poster.jpg/BROK/thumbnail/1200x1200/quality/100/flash-gordon-movie-poster.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .back {
-            background-color: orange;
+            background: url("https://www.giantbomb.com/a/uploads/square_small/0/1987/853982-ming.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
             transform: translateZ(-400px) rotateY(.5turn);
         }
 
         .left {
-            background-color: yellow;
-            transform: rotateY(.75turn) translateX(-200px) translateZ(200px);
+            background: url("https://i0.wp.com/www.eightieskids.com/wp-content/uploads/2019/05/Flash-Gordon-Vultan-Brian-Blessed.jpg?resize=667%2C500&ssl=1");
+            background-repeat: no-repeat;
+            background-size: cover;
+            transform: rotateY(-.25turn) translateX(-200px) translateZ(200px);
         }
 
         .right {
-            background-color: green;
+            background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXknABA4TFT2BMilkjQJo-zkrcN0A_MOrj7iEw9Z6HM9AFadxapGFv_CysXEXRoSw9wpw&usqp=CAU");
+            background-repeat: no-repeat;
+            background-size: cover;
             transform: rotateY(.25turn) translateX(200px) translateZ(200px);
         }
 
         .top {
-            background-color: blue;
-            transform: rotateX(.25turn) translateZ(-200px) translateY(-200px);
+            background-color: red;
+            color: black;
+            line-height: 300px;
+            font-size: 2em;
+            transform: rotateX(.25turn) translateZ(200px) translateY(-200px);
+        }
+
+        .top p {
+            transform: translateZ(50px);
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         }
 
         .bottom {
@@ -83,12 +101,16 @@
         }
 
         @keyframes spin {
-            from {
-                transform: rotateY(0deg);
+            0% {
+                transform: rotateX(-20deg) rotateY(20deg) translateY(0px);
             }
 
-            to {
-                transform: rotateY(1080deg);
+            50% {
+                transform: rotateX(-20deg) rotateY(380deg) translateY(-200px);
+            }
+
+            100% {
+                transform: rotateX(-20deg) rotateY(740deg) translateY(0px);
             }
         }
     </style>
@@ -98,22 +120,22 @@
     <div class="boxContainer">
         <div class="box">
             <div class="front">
-                <p>front</p>
+                <p></p>
             </div>
             <div class="back">
-                <p>back</p>
+                <p></p>
             </div>
             <div class="left">
-                <p>left</p>
+                <p></p>
             </div>
             <div class="right">
-                <p>right</p>
+                <p></p>
             </div>
             <div class="top">
-                <p>top</p>
+                <p>Flash Gordon!</p>
             </div>
             <div class="bottom">
-                <p>bottom</p>
+                <p></p>
             </div>
         </div>
     </div>
